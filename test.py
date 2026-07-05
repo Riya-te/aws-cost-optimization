@@ -1,7 +1,10 @@
-import boto3
+from src.report import generate_report
+from src.notification import send_email
 
-ec2 = boto3.client("ec2")
+report = generate_report()
 
-response = ec2.describe_regions()
+print(report)
+
+response = send_email(report)
 
 print(response)
