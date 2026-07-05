@@ -1,10 +1,4 @@
-from src.report import generate_report
-from src.notification import send_email
+from src.s3 import get_all_buckets
 
-report = generate_report()
-
-print(report)
-
-response = send_email(report)
-
-print(response)
+buckets = get_all_buckets()
+print(buckets)
